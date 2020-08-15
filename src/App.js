@@ -5,8 +5,9 @@ import {Auth} from './pages/Auth';
 import { ToastContainer } from 'react-toastify';
 import { getToken, decodeToken } from './utils/token';
 import AuthContext from './context/AuthContext';
-import { Home } from './pages/Home';
+import Navigation from './routes/Navigation';
 import moment from 'moment';
+
 
 function App() {
   const [auth,setAuth]=useState(undefined);
@@ -26,7 +27,7 @@ function App() {
     }else{
       setAuth(null);
     } */
-  },[auth]);
+  },[]);
 
   const logout=()=>{
     console.log('cerrar sesion')
@@ -43,11 +44,13 @@ function App() {
       setUser
     }),[auth]);
 
+    if(auth===undefined) return null;
+
   return (
     <>
     <ApolloProvider client={client}>
       <AuthContext.Provider value={authData}>
-      {!auth?<Auth/>:<Home/>}
+      {!auth?<Auth/>:<Navigation/>}
        <ToastContainer 
        position="top-right"
        autoClose={5000}

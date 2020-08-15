@@ -41,3 +41,19 @@ mutation postLogin($input:LoginInput!){
   }
 }
 `;
+
+export const GET_USER = gql `
+query getUser($id:ID,$username:String){
+  getUser(id:$id,username:$username){
+     id
+    name
+    username
+    email
+    avatar
+    siteWeb
+    description
+    password
+    createdAt
+  }
+}
+`;
