@@ -57,3 +57,18 @@ query getUser($id:ID,$username:String){
   }
 }
 `;
+
+export const UPDATE_AVATAR = gql `
+mutation updateData($file:Upload){
+  updateAvatar(file:$file){
+    status
+    urlAvatar
+  }
+}
+`;
+
+export const DELETE_AVATAR = gql `
+mutation deleteAvatar{
+  deleteAvatar
+}
+`;
