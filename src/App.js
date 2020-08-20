@@ -3,7 +3,7 @@ import { ApolloProvider } from '@apollo/client';
 import client from './config/apollo';
 import {Auth} from './pages/Auth';
 import { ToastContainer } from 'react-toastify';
-import { getToken, decodeToken } from './utils/token';
+import { getToken, decodeToken, removeToken } from './utils/token';
 import AuthContext from './context/AuthContext';
 import Navigation from './routes/Navigation';
 import moment from 'moment';
@@ -17,7 +17,7 @@ function App() {
       //ojo es recomendable usar rutas protegidas
       const encrypted=decodeToken(token);
       console.log('encrypted',encrypted);
-      (encrypted.exp <= moment().unix()) ? setAuth(null): setAuth(encrypted);
+      (encrypted.exp <= moment().unix()) ? logout(): setAuth(encrypted);
     } catch (error) {
       console.log(error);
       setAuth(null);
@@ -30,7 +30,10 @@ function App() {
   },[]);
 
   const logout=()=>{
-    console.log('cerrar sesion')
+    console.log('cerrar sesion');
+    removeToken();
+    setAuth(null);
+    
   }
 
   const setUser=(user)=>{

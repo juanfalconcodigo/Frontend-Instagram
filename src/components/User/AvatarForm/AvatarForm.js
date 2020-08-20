@@ -1,11 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import './AvatarForm.scss';
 import { Button } from 'semantic-ui-react';
 import { useDropzone } from 'react-dropzone'
 import { UPDATE_AVATAR, GET_USER, DELETE_AVATAR } from '../../../gql/user';
 import { useMutation } from '@apollo/client';
 import { toast } from 'react-toastify';
-
+import './AvatarForm.scss';
 
 export default function AvatarForm({ setShowModal, auth }) {
 

@@ -72,3 +72,10 @@ mutation deleteAvatar{
   deleteAvatar
 }
 `;
+
+
+export const UPDATE_USER = gql `
+mutation updateUser($input:UserUpdateInput){
+  updateUser(input:$input)
+}
+`;
