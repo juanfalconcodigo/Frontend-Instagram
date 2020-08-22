@@ -4,6 +4,7 @@ import { Container,Grid,Image } from 'semantic-ui-react';
 import Logo from '../../assets/images/instaclone.png';
 import { RightHead } from './RightHead';
 import './Header.scss';
+import { Search } from './Search';
 
 
 
@@ -20,7 +21,7 @@ export default function Header() {
                     </Link>
                 </Grid.Column>
                 <Grid.Column width={10}>
-                    <p>Search</p>
+                    <Search/>
                 </Grid.Column>
                 <Grid.Column width={3}>
                    <RightHead/>

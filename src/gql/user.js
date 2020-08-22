@@ -79,3 +79,20 @@ mutation updateUser($input:UserUpdateInput){
   updateUser(input:$input)
 }
 `;
+
+
+export const SEARCH = gql `
+query search($search: String) {
+  search(search: $search) {
+    id
+    name
+    username
+    email
+    avatar
+    siteWeb
+    description
+    password
+    createdAt
+  }
+}
+`;
