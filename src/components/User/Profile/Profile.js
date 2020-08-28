@@ -9,7 +9,9 @@ import {AvatarForm} from '../AvatarForm';
 import userAuth from '../../../hooks/useAuth';
 import { HeaderProfile } from './HeaderProfile';
 import {SettingsForm} from '../SettingsForm';
+import {Follower} from './Follower';
 import './Profile.scss';
+
 
 
 export default function Profile({username}) {
@@ -55,7 +57,7 @@ export default function Profile({username}) {
                </Grid.Column>
                <Grid.Column width={11} className="profile__right">
                    <HeaderProfile getUser={data.getUser} auth={auth} handleChildren={handleChildren}/>
-                   <div>Followers</div>
+                   <Follower username={username}/>
                    <div className="other">
                         <p className="name">{data.getUser.name}</p>
                         {data.getUser.siteWeb&&(
