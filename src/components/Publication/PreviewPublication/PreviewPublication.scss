@@ -1,0 +1,12 @@
+@import '../../../scss/index.scss';
+.preview-publication {
+    height: 100%;
+    &:hover {
+        cursor: pointer;
+        opacity: .9;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+}

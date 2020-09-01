@@ -6,7 +6,7 @@ import { ListUser } from '../../ListUser';
 import './Follower.scss';
 
 
-export default function Follower({ username }) {
+export default function Follower({ username,totalPublications }) {
     const [show, setShow] = useState(false);
     const [title, setTitle] = useState('');
     const [children, setChildren] = useState(null);
@@ -41,7 +41,7 @@ export default function Follower({ username }) {
     return (
         <>
             <div className="followers">
-                <p><span>**</span> publicaciones</p>
+                <p><span>{totalPublications}</span> publicaciones</p>
                 <p className="link" onClick={openFollowers}><span>{dataFollowers?.getFollowers && dataFollowers.getFollowers.length}</span> seguidores</p>
                 <p className="link" onClick={openFolloweds}><span>{dataFolloweds?.getFolloweds && dataFolloweds?.getFolloweds.length}</span> seguidos</p>
             </div>

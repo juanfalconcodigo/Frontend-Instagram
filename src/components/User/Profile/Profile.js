@@ -14,7 +14,7 @@ import './Profile.scss';
 
 
 
-export default function Profile({username}) {
+export default function Profile({username,totalPublications}) {
     
     const [showModal,setShowModal]=useState(false);
     const [titleModal, setTitleModal] = useState("");
@@ -57,7 +57,7 @@ export default function Profile({username}) {
                </Grid.Column>
                <Grid.Column width={11} className="profile__right">
                    <HeaderProfile getUser={data.getUser} auth={auth} handleChildren={handleChildren}/>
-                   <Follower username={username}/>
+                   <Follower username={username} totalPublications={totalPublications}/>
                    <div className="other">
                         <p className="name">{data.getUser.name}</p>
                         {data.getUser.siteWeb&&(
