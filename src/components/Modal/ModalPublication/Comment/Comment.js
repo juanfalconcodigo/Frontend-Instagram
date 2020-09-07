@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { GET_COMMENTS } from '../../../../gql/comment';
 import { useQuery } from '@apollo/client';
 import ImageNotFound from '../../../../assets/images/avatar.png';
-import './Comment.scss';
 import { Link } from 'react-router-dom';
 import { Image } from 'semantic-ui-react';
+import './Comment.scss';
+
 export default function Comment({ publication }) {
     const { data, loading,startPolling,stopPolling } = useQuery(GET_COMMENTS, { variables: { idPublication: publication?.id } });
     const [comments, setComments] = useState([]);

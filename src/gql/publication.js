@@ -21,7 +21,25 @@ query getPublications($username: String!) {
 }
 `;
 
+
+const GET_PUBLICATIONS_FOLLOWEDS = gql `
+query {
+  getPublicationsFolloweds {
+    id
+    idUser {
+      name
+      username
+      avatar
+    }
+    file
+    typeFile
+    createdAt
+  }
+}
+`;
+
 export {
     UPLOAD_PUBLICATION,
-    GET_PUBLICATIONS
+    GET_PUBLICATIONS,
+    GET_PUBLICATIONS_FOLLOWEDS
 }

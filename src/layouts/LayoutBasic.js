@@ -9,7 +9,7 @@ export default function LayoutBasic(props) {
         <Container className="layout-basic">
           {props.children}
         </Container>
-        <footer>footer</footer>
+       {/*  <footer>footer</footer> */}
         </>
     )
 }

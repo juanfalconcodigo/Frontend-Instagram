@@ -38,3 +38,13 @@ query getFolloweds($username: String!) {
   }
 }
 `;
+
+export const GET_NOT_FOLLOWEDS = gql `
+query{
+  getNotFolloweds{
+    name
+    username
+    avatar
+  }
+}
+`;
