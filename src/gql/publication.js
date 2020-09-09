@@ -38,8 +38,15 @@ query {
 }
 `;
 
+const DELETE_PUBLICATION = gql `
+mutation deletePublication($idPublication: ID!) {
+  deletePublication(idPublication: $idPublication)
+}
+`;
+
 export {
     UPLOAD_PUBLICATION,
     GET_PUBLICATIONS,
-    GET_PUBLICATIONS_FOLLOWEDS
+    GET_PUBLICATIONS_FOLLOWEDS,
+    DELETE_PUBLICATION
 }
